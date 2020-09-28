@@ -28,6 +28,7 @@ stages:
 - stage: build
   displayName: 'Build'
 
+  jobs:
   - job: manylinux
     displayName: 'Manylinux'
     strategy:

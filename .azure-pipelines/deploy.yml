@@ -50,10 +50,10 @@ stages:
     steps:
       - checkout: self
         submodules: true
-        clean: tr
+        clean: true
       - template: templates/stage-aarch64.yml@templates
-        #parameters:
-          #folder: wheelhouse
+        parameters:
+          folder: wheelhouse
 
   - job: manylinux
     displayName: 'Manylinux'

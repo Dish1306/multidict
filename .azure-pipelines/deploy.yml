@@ -28,20 +28,6 @@ stages:
 - stage: build
   displayName: 'Build'
 
-  jobs:
-  - job: tarball
-    displayName: 'Tarball'
-    pool:
-      vmImage: 'ubuntu-latest'
-
-    steps:
-      - template: templates/step-build.yml@templates
-        parameters:
-          steps:
-            - script: |
-                python setup.py sdist
-              displayName: 'Make tarball'
-
   - job: manylinux
     displayName: 'Manylinux'
     strategy:

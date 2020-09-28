@@ -46,9 +46,8 @@ stages:
     displayName: 'Manylinuxaarch64'
     pool:
       vmImage: 'ubuntu-latest'
-
+      
     steps:
-      steps:
       - checkout: self
         submodules: true
         clean: true

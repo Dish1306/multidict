@@ -25,8 +25,6 @@ stages:
 
 - template: stage-test.yml
 
-- template: templates/stage-aarch64.yml@templates
-
 - stage: build
   displayName: 'Build'
 
@@ -43,6 +41,19 @@ stages:
             - script: |
                 python setup.py sdist
               displayName: 'Make tarball'
+              
+  - job: manylinuxaarch64
+    displayName: 'Manylinuxaarch64'
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    steps:
+      - template: templates/stage-aarch64.yml@templates
+        #parameters:
+          #steps:
+            #- script: |
+                #python setup.py sdist
+              #displayName: 'Make tarball'
 
   - job: manylinux
     displayName: 'Manylinux'

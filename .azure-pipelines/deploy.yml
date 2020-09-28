@@ -49,11 +49,11 @@ stages:
 
     steps:
       - template: templates/stage-aarch64.yml@templates
-        #parameters:
-          #steps:
-            #- script: |
-                #python setup.py sdist
-              #displayName: 'Make tarball'
+        parameters:
+          steps:
+            - script: |
+                python setup.py sdist
+              displayName: 'Make tarball'
 
   - job: manylinux
     displayName: 'Manylinux'

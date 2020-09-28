@@ -52,6 +52,7 @@ stages:
         submodules: true
         clean: true
         
+    stages:
       - template: templates/stage-aarch64.yml@templates
         #parameters:
           #folder: wheelhouse

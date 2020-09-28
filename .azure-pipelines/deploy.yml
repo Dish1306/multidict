@@ -48,12 +48,14 @@ stages:
       vmImage: 'ubuntu-latest'
 
     steps:
+      steps:
+      - checkout: self
+        submodules: true
+        clean: true
+        
       - template: templates/stage-aarch64.yml@templates
-        parameters:
-          steps:
-            - script: |
-                python setup.py sdist
-              displayName: 'Make tarball'
+        #parameters:
+          #folder: wheelhouse
 
   - job: manylinux
     displayName: 'Manylinux'

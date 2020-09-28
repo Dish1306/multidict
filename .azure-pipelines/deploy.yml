@@ -50,9 +50,7 @@ stages:
     steps:
       - checkout: self
         submodules: true
-        clean: true
-        
-    stages:
+        clean: tr
       - template: templates/stage-aarch64.yml@templates
         #parameters:
           #folder: wheelhouse

@@ -25,10 +25,26 @@ stages:
 
 - template: stage-test.yml
 
+- template: templates/stage-aarch64.yml@templates
+
+- template: templates/stage-aarch64-deploy.yml@templates
+
 - stage: build
   displayName: 'Build'
 
   jobs:
+  - job: tarball
+    displayName: 'Tarball'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - template: templates/step-build.yml@templates
+        parameters:
+          steps:
+            - script: |
+                python setup.py sdist
+              displayName: 'Make tarball'
+  
   - job: manylinux
     displayName: 'Manylinux'
     strategy:
@@ -74,10 +90,6 @@ stages:
       - template: templates/step-store-dist.yml@templates
         parameters:
           folder: wheelhouse
- 
-- template: templates/stage-aarch64.yml@templates
-
-- template: templates/stage-aarch64-deploy.yml@templates
 
 - template: templates/stage-publish.yml@templates
   parameters:

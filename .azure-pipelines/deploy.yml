@@ -26,8 +26,6 @@ stages:
 - template: stage-test.yml
 
 - template: templates/stage-aarch64.yml@templates
-  parameters:
-    step: ''
 
 - stage: build
   displayName: 'Build'
@@ -92,8 +90,6 @@ stages:
           folder: wheelhouse
           
 - template: templates/stage-aarch64-deploy.yml@templates
-  parameters:
-    step: ''
 
 - template: templates/stage-publish.yml@templates
   parameters:

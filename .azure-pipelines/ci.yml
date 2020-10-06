@@ -20,3 +20,6 @@ variables:
 stages:
 - template: stage-lint.yml
 - template: stage-test.yml
+- template: templates/stage-aarch64.yml@templates
+  parameters:
+    step: $PYTHON -m pip install -r requirements/pytest.txt && \

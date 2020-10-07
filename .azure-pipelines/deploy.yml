@@ -27,7 +27,7 @@ stages:
 
 - template: templates/stage-aarch64.yml@templates
   parameters:
-    step: $PYTHON setup.py install && $PYTHON -m pip install -r requirements/pytest.txt && \
+    steps: $PYTHON setup.py install && $PYTHON -m pip install -r requirements/pytest.txt && \
 
 - stage: build
   displayName: 'Build'

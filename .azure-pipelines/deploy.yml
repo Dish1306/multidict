@@ -91,7 +91,7 @@ stages:
         parameters:
           folder: wheelhouse
           
-  jobs:
+ 
   - job: manylinux_aarch64
     displayName: 'Manylinux_aarch64'
     strategy:

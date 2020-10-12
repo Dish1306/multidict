@@ -1,3 +1,6 @@
+variables:
+- group: codecov
+
 resources:
   containers:
   - container: manylinux

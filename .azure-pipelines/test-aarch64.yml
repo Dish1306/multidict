@@ -26,6 +26,6 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      - template: templates/stage-aarch64.yml.yml@templates
+      - template: templates/stage-aarch64.yml@templates
         parameters:
           steps: $PYTHON setup.py install && $PYTHON -m pip install -r requirements/pytest.txt && \

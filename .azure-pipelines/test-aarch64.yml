@@ -1,21 +1,14 @@
 trigger:
-  batch: true
-  branches:
-    include:
-    - master
-    - ?.?*  # matches to backport branches, e.g. 3.6
   tags:
-    exclude:
-    - '*'
-pr:
-  autoCancel: true
-  branches:
     include:
-    - master
-    - ?.?*  # matches to backport branches, e.g. 3.6
+    - v?.*
+pr: none
+
 
 variables:
 - group: codecov
+- group: twine
+
 
 resources:
   containers:
@@ -26,10 +19,11 @@ resources:
     type: github
     name: Dish1306/azure-pipelines
     endpoint: aio-libs
-    
+  
 stages:
+
 - stage: testaarch64
-  displayName: 'Test_aarch64'
+  displayName: 'testaarhc64'
     
   jobs:
   - job: manylinux_aarch64

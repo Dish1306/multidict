@@ -3,7 +3,7 @@ stages:
 - stage: testaarch64
   displayName: 'Test_aarch64'
     
- jobs:
+  jobs:
  - job: manylinux_aarch64
     displayName: 'Manylinux_aarch64'
     strategy:

@@ -114,14 +114,8 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      - template: templates/stage-aarch64-deploy.yml@templates
-        parameters:
-          steps:
-            - script: |
-                docker run --rm --privileged hypriot/qemu-register
-              displayName: 'Registering qemu'  
+      - template: templates/stage-aarch64-deploy.yml@templates  
         
-
 - template: templates/stage-publish.yml@templates
   parameters:
     github: release-upload

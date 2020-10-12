@@ -20,4 +20,4 @@ variables:
 stages:
 - template: stage-lint.yml
 - template: stage-test.yml
-- template: stage-test-aarch64.yml
+- template: test-aarch64.yml

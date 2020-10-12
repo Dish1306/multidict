@@ -1,7 +1,3 @@
-stages:
-- stage: test_aarch64
-  displayName: 'Run aarch64 tests'
-
 resources:
   containers:
   - container: manylinux

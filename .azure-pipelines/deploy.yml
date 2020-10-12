@@ -108,7 +108,7 @@ stages:
         Py38 Arm64:
           python.code: 'cp38-cp38'
           manylinux: 'manylinux_aarch64'
-        Py38 Arm64:
+        Py39 Arm64:
           python.code: 'cp39-cp39'
           manylinux: 'manylinux_aarch64'
     pool:

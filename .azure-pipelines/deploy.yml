@@ -113,12 +113,6 @@ stages:
           manylinux: 'manylinux_aarch64'
     pool:
       vmImage: 'ubuntu-latest'
-
-    steps:
-    - checkout: self
-      submodules: true
-      clean: true
-          
       - template: templates/stage-aarch64-deploy.yml@templates
 
 - template: templates/stage-publish.yml@templates

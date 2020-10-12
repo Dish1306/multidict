@@ -1,8 +1,6 @@
-trigger:
-  tags:
-    include:
-    - v?.*
-pr: none
+stages:
+- stage: test_aarch64
+  displayName: 'Run aarch64 tests'
 
 resources:
   containers:

@@ -30,33 +30,6 @@ resources:
 stages:
 - template: stage-lint.yml
 - template: stage-test.yml
-
-- stage: test_aarch64
-  displayName: 'Test_aarch64'
+- template: test-aarch64.yml
   
-  jobs:
-  - job: manylinux_aarch64
-    displayName: 'Manylinux_aarch64'
-    strategy:
-      matrix:
-        Py35 Arm64:
-          python.code: 'cp35-cp35m'
-          manylinux: 'manylinux_aarch64'
-        Py36 Arm64:
-          python.code: 'cp36-cp36m'
-          manylinux: 'manylinux_aarch64'
-        Py37 Arm64:
-          python.code: 'cp37-cp37m'
-          manylinux: 'manylinux_aarch64'
-        Py38 Arm64:
-          python.code: 'cp38-cp38'
-          manylinux: 'manylinux_aarch64'
-        Py39 Arm64:
-          python.code: 'cp39-cp39'
-          manylinux: 'manylinux_aarch64'
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-      - template: templates/stage-aarch64.yml.yml@templates
-        parameters:
-          steps: $PYTHON setup.py install && $PYTHON -m pip install -r requirements/pytest.txt && \
+
